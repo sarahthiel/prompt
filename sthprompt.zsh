@@ -20,6 +20,7 @@ STH_USER_MIN_UID="${STH_USER_MIN_UID:=500}"
 STH_USER_COLOR="${STH_USER_COLOR:="cyan"}"
 STH_USER_COLOR_SYS_USER="${STH_USER_COLOR_SYS_USER:="magenta"}"
 STH_HOST_COLOR="${STH_HOST_COLOR:="cyan"}"
+STH_HOST_NAME="${STH_HOST_NAME:="$(hostname -s)"}"
 
 #-- DIRECTORY -----------------------------------------------------------------
 STH_DIR_TRUNCATE="${STH_DIR_TRUNCATE:=5}"
@@ -161,7 +162,7 @@ sth_prompt_render() {
       sth_user='%F{$STH_CUR_USER_COLOR}'
     fi
     sth_user+='%n%f'
-    sth_host='%F{$STH_CUR_HOST_COLOR}%m%f'
+    sth_host='%F{$STH_CUR_HOST_COLOR}$STH_HOST_NAME%f'
   fi
 
   # Directory
